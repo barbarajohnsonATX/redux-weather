@@ -1,5 +1,6 @@
 
 import { FETCH_WEATHER_SUCCESS, FETCH_WEATHER_FAIL, FETCH_WEATHER_START } from '../actions/weather'
+
 const initialState = {
     data: [],
     isLoading: false,

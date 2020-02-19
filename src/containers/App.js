@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchWeather } from "../actions/weather";
 import Header from '../components/Header';
 import './App.css';
+import SearchBar from '../components/SearchBar';
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
      
     return (
       <div className="App">
+        <SearchBar />
         <Header text={"React Redux Weather"}></Header>
 
         <h2>{weatherData.data.name ? weatherData.data.name : "" }</h2>
