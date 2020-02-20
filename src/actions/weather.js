@@ -1,5 +1,4 @@
 
-import { clearSearchForm } from './searchForm';
 export const FETCH_WEATHER_SUCCESS = 'FETCH_WEATHER_SUCCESS';
 export const FETCH_WEATHER_FAIL = 'FETCH_WEATHER_FAIL';
 export const FETCH_WEATHER_START = 'FETCH_WEATHER_START';
@@ -38,8 +37,7 @@ const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.
         .then(data => {
             console.log("data", data)
             dispatch( fetchWeatherSuccess(data))
-            dispatch( clearSearchForm() )
-             
+              
         })
         
 

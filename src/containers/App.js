@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchWeather } from "../actions/weather";
 import Header from '../components/Header';
+import Weather from '../components/Weather';
 import './App.css';
 import SearchBar from '../components/SearchBar';
+import { Divider } from 'semantic-ui-react'
 
 class App extends Component {
 
@@ -20,15 +22,12 @@ class App extends Component {
      
     return (
       <div className="App">
-        <SearchBar />
-        <Header text={"React Redux Weather"}></Header>
+        <Header text={"React Redux Weather"} />
+        <Divider hidden />
 
-        <h2>{weatherData.data.name ? weatherData.data.name : "" }</h2>
-        <h3>Visibility: {weatherData.data.visibility ? weatherData.data.visibility : ""}</h3>
-        <h3>Timezone: {weatherData.data.timezone ? weatherData.data.timezone : ""}</h3>
-        <h3>Temp: {weatherData.data.main ? weatherData.data.main.temp : ""}</h3>
-        <h3>Main: {weatherData.data.weather ? weatherData.data.weather[0].description : ""}</h3>
-        <h3>Rain 1 hr: {weatherData.data.rain ? weatherData.data.rain['1h'] : ""}</h3>
+        <SearchBar />
+        <Divider />
+        <Weather data={weatherData.data}/>
 
  
     

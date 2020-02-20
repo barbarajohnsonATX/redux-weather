@@ -1,5 +1,4 @@
-import { fetchWeather } from './weather';
-
+ 
 export const UPDATE_SEARCH_FORM = 'UPDATE_SEARCH_FORM';
 export const RESET_SEARCH_FORM = 'RESET_SEARCH_FORM';
  
