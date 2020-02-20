@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                errorMessage: action.error
+                errorMessage: "Error fetching weather"
             }
         
         case FETCH_WEATHER_START:  

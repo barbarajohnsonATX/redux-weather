@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { updateSearchForm, clearSearchForm } from '../actions/searchForm';
+import { addCityToList } from '../actions/cityList';
 import { fetchWeather } from '../actions/weather';
  
 
 
-const SearchBar = ({ searchFormData, updateSearchForm, fetchWeather, clearSearchForm }) => {
+const SearchBar = ({ searchFormData, updateSearchForm, fetchWeather, clearSearchForm, addCityToList }) => {
 
     const handleInputChange = event => {
         const { name, value } = event.target
@@ -24,6 +25,7 @@ const SearchBar = ({ searchFormData, updateSearchForm, fetchWeather, clearSearch
         event.preventDefault()
         fetchWeather(searchFormData.city)
         clearSearchForm() 
+        addCityToList(searchFormData.city)
 
     }
 
@@ -34,7 +36,7 @@ const SearchBar = ({ searchFormData, updateSearchForm, fetchWeather, clearSearch
                 
                 <form onSubmit={handleSubmit}>
                     <div className="ui input">
-                        <input placeholder="ex: Austin, San Francisco" 
+                        <input placeholder="Enter City" 
                             value={searchFormData.city} 
                             name="city" 
                             type="text" 
@@ -57,4 +59,4 @@ const mapStateToProps = state => {
     }
 
 
-    export default connect(mapStateToProps, { updateSearchForm, fetchWeather, clearSearchForm } )(SearchBar)
+    export default connect(mapStateToProps, { updateSearchForm, fetchWeather, clearSearchForm, addCityToList } )(SearchBar)

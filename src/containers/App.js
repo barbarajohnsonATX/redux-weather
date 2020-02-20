@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import { fetchWeather } from "../actions/weather";
 import Header from '../components/Header';
 import Weather from '../components/Weather';
+import CityList from '../components/CityList';
+
 import './App.css';
 import SearchBar from '../components/SearchBar';
 import { Divider } from 'semantic-ui-react'
-
+ 
 class App extends Component {
 
   componentDidMount() {
@@ -27,7 +29,15 @@ class App extends Component {
 
         <SearchBar />
         <Divider />
-        <Weather data={weatherData.data}/>
+       
+            <Weather data={weatherData.data}/>
+             
+            <CityList />
+            
+ 
+       
+
+    
 
  
     
