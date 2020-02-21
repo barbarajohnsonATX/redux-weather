@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchWeather } from "../actions/weather";
+import { addCityToList } from "../actions/cityList";
 import Header from '../components/Header';
 import Weather from '../components/Weather';
 import CityList from '../components/CityList';
@@ -13,6 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchWeather("Austin")
+    this.props.addCityToList("Austin")
   }
 
 
@@ -26,20 +28,11 @@ class App extends Component {
       <div className="App">
         <Header text={"React Redux Weather"} />
         <Divider hidden />
-
         <SearchBar />
         <Divider />
-       
-            <Weather data={weatherData.data}/>
-             
-            <CityList />
-            
- 
-       
-
-    
-
- 
+        <Weather data={weatherData.data}/>
+        <Divider />
+        <CityList />
     
       </div>
     );
@@ -54,4 +47,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, { fetchWeather })(App);
+export default connect(mapStateToProps, { fetchWeather, addCityToList })(App);

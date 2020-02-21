@@ -17,10 +17,8 @@ export default (state = initialState, action) => {
      
         case REMOVE_CITY_FROM_LIST: 
             let newCities = [...state.cities]
-            console.log(newCities)
             let index = newCities.indexOf(action.city)
             newCities.splice(index, 1)
-              
             return {
                 ...state,
                 cities: newCities

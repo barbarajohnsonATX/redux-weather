@@ -4,6 +4,7 @@ import { fetchWeather } from '../actions/weather';
 import { removeCityFromList } from '../actions/cityList'
 import '../index.css'
 
+
 class CityList extends Component {
  
   
@@ -13,13 +14,13 @@ class CityList extends Component {
         let { cityList, fetchWeather, removeCityFromList } = this.props
          
         let list = cityList.cities.map((city, i)  => {
-             return(<div className="ui buttons" key={i}>
-                 <button className="small blue ui inverted button" onClick={dispatch => fetchWeather(city) } >{ city } </button>
-                 <div className="or"></div>
-                 <button className="small ui red inverted delete button" onClick={dispatch => removeCityFromList(city)}>Delete</button>
+             return(
+                <div className="ui buttons" key={i}>
+                    <button className="small blue ui inverted button" onClick={dispatch => fetchWeather(city) } >{ city } </button>
+                    <div className="or"></div>
+                    <button className="small ui red inverted delete button" onClick={dispatch => removeCityFromList(city)}>Delete</button>
              
-             </div>)
-
+                </div>)
         })
          
    
@@ -29,8 +30,7 @@ class CityList extends Component {
       return (
         <div className="CityList">
             <div className="ui vertical buttons">
-            { list }
-
+                { list }
             </div>
           
         </div>
