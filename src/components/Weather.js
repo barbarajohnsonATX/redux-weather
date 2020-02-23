@@ -12,7 +12,7 @@ const Weather = (props) => {
                  
     
     return (
-        <div>
+        <div className="weatherInfo">
              <h4> { current } </h4>
             <h2> { props.data.name} </h2>            
             <h2> { props.data.main ? `${k_to_f(props.data.main.temp)} °F` : "" } </h2>

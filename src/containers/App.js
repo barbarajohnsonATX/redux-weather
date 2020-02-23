@@ -32,10 +32,18 @@ class App extends Component {
         <Divider hidden />
         <SearchBar />
         <Divider />
-        <Weather data={weatherData.data}/>
-        <Divider hidden />
-        <CityList />
-          <Location />
+        <Location />
+
+        <div className="container">
+           <CityList />
+          < Weather data={weatherData.data}/>
+           
+   
+          
+
+        </div>
+
+
         
     
       </div>

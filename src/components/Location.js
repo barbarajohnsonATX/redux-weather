@@ -10,18 +10,18 @@ class Location extends React.Component {
   render() {
 
     const { weatherData } = this.props;
-    let pos;
+    let position;
     if (weatherData.data.coord) {
-        pos=[weatherData.data.coord.lat, weatherData.data.coord.lon]
+      position=[weatherData.data.coord.lat, weatherData.data.coord.lon]
     }
      
     return (
-      <Map center={pos} zoom={13}>
+       <Map center={position} zoom={13}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
-        <Marker position={pos}>
+        <Marker position={position}>
           {/* <Popup>
             A pretty CSS3 popup. <br/> Easily customizable.
           </Popup> */}

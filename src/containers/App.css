@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
@@ -35,5 +36,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  width: 800px;
+  /* border: 5px solid rgb(111,41,97); */
+  border-radius: .5em;
+  padding: 10px;
+}
+
+.cityList {
+  width: 300px;
+  padding: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  /* border: 2px solid rgb(111,41,97); */
+
+}
+
+.weatherInfo {
+  width: 500px;
+  padding: 1px;
+  display: inline-block;
+  /* vertical-align: middle; */
+  /* border: 2px solid rgb(111,41,97); */
+
 }
 
