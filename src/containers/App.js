@@ -9,6 +9,8 @@ import CityList from '../components/CityList';
 import './App.css';
 import SearchBar from '../components/SearchBar';
 import { Divider } from 'semantic-ui-react'
+import Location from '../components/Location';
+  
  
 class App extends Component {
 
@@ -31,8 +33,10 @@ class App extends Component {
         <SearchBar />
         <Divider />
         <Weather data={weatherData.data}/>
-        <Divider />
+        <Divider hidden />
         <CityList />
+          <Location />
+        
     
       </div>
     );

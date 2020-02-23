@@ -37,10 +37,12 @@ const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.
         .then(r => r.json())
         .then(data => {
             console.log("data", data)
-            dispatch( fetchWeatherSuccess(data))
-              
+            if (data.cod !== 200){
+                dispatch( fetchWeatherFail(data.code))
+            } else {
+                dispatch( fetchWeatherSuccess(data))
+            }       
         })
-        
 
         //if Promise is rejected
         .catch(error => {

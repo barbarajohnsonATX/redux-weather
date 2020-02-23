@@ -43,7 +43,7 @@ const SearchBar = ({ searchFormData, updateSearchForm, fetchWeather, clearSearch
                             onChange={handleInputChange}/>
                       </div>
                     
-                     <div><button className="small ui green button" type="submit" >Get Weather</button></div> 
+                     <div><button className="small ui green inverted button" type="submit" >Get Weather</button></div> 
 
                 </form>
 
