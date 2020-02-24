@@ -4,9 +4,12 @@ import { FETCH_WEATHER_SUCCESS, FETCH_WEATHER_FAIL, FETCH_WEATHER_START } from '
 const initialState = {
     data: [],
     isLoading: false,
-    errorMessage: ""
+    errorMessage: "",
+
 }
     
+
+ 
 
 
 
@@ -18,8 +21,8 @@ export default (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 data: action.payload,
-                errorMessage: ""
-            }
+                errorMessage: "",
+             }
 
 
         case FETCH_WEATHER_FAIL:  

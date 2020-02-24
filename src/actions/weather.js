@@ -40,6 +40,7 @@ const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.
             console.log("data", data)
             if (data.cod !== 200){
                 dispatch( fetchWeatherFail(data.code))
+                alert(data.message)
             } else {
                 dispatch( fetchWeatherSuccess(data))
                 dispatch( addCityToList (data.name))
@@ -51,6 +52,7 @@ const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.
         .catch(error => {
             console.log("error", error);
             dispatch( fetchWeatherFail(error))
+            alert(error)
 
              
         })
