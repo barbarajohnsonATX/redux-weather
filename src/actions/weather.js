@@ -21,7 +21,8 @@ export const FETCH_WEATHER_START = 'FETCH_WEATHER_START';
 // async action creators 
 export const fetchWeather = (city) => {
 
-const API_KEY = 'd82dd428496894c8a11ee80a9dc34b35'
+const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
+
  
 const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather';
 
