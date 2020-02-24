@@ -15,12 +15,16 @@ class CityList extends Component {
         let { cityList, fetchWeather, removeCityFromList } = this.props
          
         let list = cityList.cities.map((city, i)  => {
+          let keyCity = `city-${i}`;
+          let keyRemoveCity = `remove-city-${i}`;
+          let keyCityList = `cityList=${i}`
+
              return(
-                 <div className="cityList">
+                 <div className="cityList" key={keyCityList}>
                  <div className=" ui buttons" key={i}>
-                    <button className="blue ui inverted button" onClick={dispatch => fetchWeather(city) } >{ city } </button>
+                    <button className="blue ui inverted button" key={keyCity} onClick={dispatch => fetchWeather(city) } >{ city } </button>
                     <div className="or"></div>
-                    <button className="ui red inverted delete button" onClick={dispatch => removeCityFromList(city)}>Delete</button>
+                    <button className="ui red inverted delete button" key={keyRemoveCity} onClick={dispatch => removeCityFromList(city)}>Delete</button>
                 </div>
                 </div>
 

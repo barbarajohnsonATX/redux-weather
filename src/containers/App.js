@@ -16,8 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchWeather("Austin")
-    this.props.addCityToList("Austin")
-  }
+   }
 
 
 

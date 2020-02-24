@@ -25,7 +25,7 @@ const SearchBar = ({ searchFormData, updateSearchForm, fetchWeather, clearSearch
         event.preventDefault()
         fetchWeather(searchFormData.city)
         clearSearchForm() 
-        addCityToList(searchFormData.city)
+      //  addCityToList(searchFormData.city)
 
     }
 

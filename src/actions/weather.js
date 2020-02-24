@@ -1,8 +1,9 @@
 
+import { addCityToList } from './cityList';
+
 export const FETCH_WEATHER_SUCCESS = 'FETCH_WEATHER_SUCCESS';
 export const FETCH_WEATHER_FAIL = 'FETCH_WEATHER_FAIL';
 export const FETCH_WEATHER_START = 'FETCH_WEATHER_START';
-
 
 // action creators 
  export const fetchWeatherSuccess = (data) => {
@@ -41,6 +42,8 @@ const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.
                 dispatch( fetchWeatherFail(data.code))
             } else {
                 dispatch( fetchWeatherSuccess(data))
+                dispatch( addCityToList (data.name))
+ 
             }       
         })
 
